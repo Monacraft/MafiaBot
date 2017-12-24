@@ -1,0 +1,22 @@
+{
+  "name": "mafiabot",
+  "version": "1.0.0",
+  "description": "Discord Bot for Mafia",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Monacraft/MafiaBot.git"
+  },
+  "author": "Monacraft",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Monacraft/MafiaBot/issues"
+  },
+  "homepage": "https://github.com/Monacraft/MafiaBot#readme",
+  "dependencies": {
+    "discord.js": "^11.2.1"
+  }
+}
