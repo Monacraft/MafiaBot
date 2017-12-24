@@ -1,1 +1,2 @@
 source\bot.js
+source\game.js
