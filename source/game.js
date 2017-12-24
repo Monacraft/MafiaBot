@@ -7,12 +7,13 @@ function updateMessage(msg) {
     if (msg.author.id === myID) {
         //msg.edit('replaced');
     }
-}
+} 
 
 function classGame(channelArg, ownerArg, msgArg) {
     var players = [];
     var channel = channelArg;
     var owner = ownerArg;
+    var currentmsg;
     msgArg.channel.send('Starting Game');
     client.on('message', msg => {
         if (msg.channel.id === channel.id && msg.author.id === myID) {

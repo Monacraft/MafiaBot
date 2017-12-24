@@ -8,7 +8,7 @@ var token = 'Mzk0NTM0MzUxNTk1MTEwNDAw.DSFuUg.ATkcYy0pcOLpNINW2GljgKzi7LE'
 client.on('ready', () => {
   client.user.setGame("!start to play.");
   console.log(`Logged in as ${client.user.tag}!`);
-});
+}); 
 
 client.on('message', msg => {
   if (msg.content === '!ping') {
