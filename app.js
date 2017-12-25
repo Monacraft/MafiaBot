@@ -1,18 +1,18 @@
-// Compiled at  9:56 Mon 25/12/2017 by jashv
+// Compiled at 11:15 Mon 25/12/2017 by jashv
 
 // GLOBAL LINES
 const Discord = require("discord.js");          // [Global]
 const client = new Discord.Client();            // [Global]
 var games = [];                                 // [Global]
-var myID = '394534351595110400'                 // [Global]
+var myID = '394534351595110400';                // [Global]
+var fs = require('fs');                         // [Global]
 
 // =======================================
 // START OF NEW FILE:
 // source\bot.js
 
 
-
-var token = 'Mzk0NTM0MzUxNTk1MTEwNDAw.DSFuUg.ATkcYy0pcOLpNINW2GljgKzi7LE'
+var token;
 client.on('ready', () => {
   client.user.setGame("!start to play.");
   console.log(`Logged in as ${client.user.tag}!`);
@@ -46,7 +46,11 @@ client.on('message', msg => {
   }
 });
 
-client.login(token);
+fs.readFile('..\\MafiaBot.token', 'utf8', function (err, data) {
+  if (err) throw err;
+  token = data;
+  client.login(token);  
+});
 
 
 // EOF: source\bot.js
@@ -88,7 +92,6 @@ function classGame(channelArg, ownerArg, msgArg) {
             `\`\`\`
 Welcome to Mafia :)
 Current Players: ${x}
-            }}
 React :heart: to join
 \`\`\`
 `

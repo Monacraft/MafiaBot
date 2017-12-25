@@ -1,10 +1,10 @@
 const Discord = require("discord.js");          // [Global]
 const client = new Discord.Client();            // [Global]
 var games = [];                                 // [Global]
-var myID = '394534351595110400'                 // [Global] 
+var myID = '394534351595110400';                // [Global]
+var fs = require('fs');                         // [Global] 
 
-
-var token = 'Mzk0NTM0MzUxNTk1MTEwNDAw.DSFuUg.ATkcYy0pcOLpNINW2GljgKzi7LE'
+var token;
 client.on('ready', () => {
   client.user.setGame("!start to play.");
   console.log(`Logged in as ${client.user.tag}!`);
@@ -38,4 +38,8 @@ client.on('message', msg => {
   }
 });
 
-client.login(token);
+fs.readFile('..\\MafiaBot.token', 'utf8', function (err, data) {
+  if (err) throw err;
+  token = data;
+  client.login(token);  
+});
